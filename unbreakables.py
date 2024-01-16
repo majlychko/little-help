@@ -44,7 +44,8 @@ def replace_space(text):
     #увы не можем просто после слова тинькофф ставить неразрывник, ибо оно не всегда с продутом идет
     #result = re.sub(r'Tinkoff ', r'Tinkoff\\u00A0', result)
     #result = re.sub(r'Тинькофф ', r'Тинькофф\\u00A0', result)
-    #result = re.sub(r'ALL ', r'ALL\\u00A0', result)
+    
+    result = re.sub(r'ALL ', r'ALL\\u00A0', result)
 
     # Заменяем Tinkoff Pro на Tinkoff неразрывник Pro
     result = re.sub(r'Tinkoff Pro', r'Tinkoff\\u00A0Pro', result)
