@@ -99,6 +99,23 @@ with open('story.json', 'r') as json_file:
 replace_text_by_tag(data)
 
 
-# сохраняем измененные данные json в новый файл
-with open('updated_story.json', 'w') as updated_file:
+# сохраняем измененные данные json в старый файл файл
+with open('story.json', 'w') as updated_file:
     json.dump(data, updated_file, ensure_ascii=False, indent=4)
+
+def replace_backslashes(text):
+    # Заменяем двойной обратный слеш на одиночный обратный слеш
+    result = text.replace('\\\\', '\\')
+    return result
+
+# загружаем json файл
+with open('story.json', 'r') as json_file:
+    data = json.load(json_file)
+
+# выполняем замену двойного обратного слеша на одинарный обратный слеш
+json_str = json.dumps(data, ensure_ascii=False, indent=4)
+updated_json_str = replace_backslashes(json_str)
+
+# сохраняем измененные данные в новый файл
+with open('updated_story.json', 'w') as updated_file:
+    updated_file.write(updated_json_str)
