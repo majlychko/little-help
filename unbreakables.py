@@ -103,6 +103,7 @@ replace_text_by_tag(data)
 with open('story.json', 'w') as updated_file:
     json.dump(data, updated_file, ensure_ascii=False, indent=4)
 
+#я так и не разобралась, как нормально это реализовать и почему у меня лишний слеш берется, поэтому пока так
 def replace_backslashes(text):
     # Заменяем двойной обратный слеш на одиночный обратный слеш
     result = text.replace('\\\\', '\\')
