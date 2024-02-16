@@ -1,6 +1,5 @@
 import json
 
-
 def recursive_change(obj, is_name_found=False, is_TSN_found=False):
     if isinstance(obj, dict):
         for key, value in obj.items():
