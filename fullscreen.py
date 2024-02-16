@@ -21,7 +21,7 @@ def recursive_change(obj, is_name_found=False, is_TSN_found=False):
                     index_INVMC = value.find("INVMC")
                     if index_TSN != -1:
                         obj[key] = value[:index_TSN] + "(фуллскрин) " + value[index_TSN:]
-                        is_name_found = True
+                        is_name_found = True #я запуталась, но вроде работает
                         is_TSN_found = True
                     elif index_INVMC != -1 and not is_TSN_found:
                         obj[key] = value[:index_INVMC] + "(фуллскрин) " + value[index_INVMC:]
